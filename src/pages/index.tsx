@@ -1,24 +1,15 @@
-import { useState } from 'react'
 import Head from 'next/head'
 
-import { NFT, NFTByAddressResponse } from '@/types'
+import { useGetNfts } from '@/hooks/useGetNfts'
+import { Search } from '@/components/Search/Search'
+import { NFTGallery } from '@/components/NFTGallery/NFTGallery'
 
 export default function Home() {
-    const [inputValue, setInputValue] = useState('');
-    const [isLoading, setIsLoading] = useState(false);
-    const [data, setData] = useState<NFT[]>([])
-
-    async function handleSearch() {
-        try {
-            setIsLoading(true);
-            const response = await fetch(`/api/nfts?address=0xd8da6bf26964af9d7eed9e03e53415d37aa96045`);
-            const result = await response.json() as NFTByAddressResponse;
-            setData(result.result);
-            setIsLoading(false);
-        } catch (error) {
-            setIsLoading(false);
-        }
-    }
+    const [
+        isLoading,
+        data,
+        onGetByAddress,
+    ] = useGetNfts();
 
     return (
         <>
@@ -29,27 +20,11 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                <form>
-                    <input 
-                        name="addressInput" 
-                        onChange={e => setInputValue(e.target.value)} 
-                        value={inputValue}
-                    />
-                    <button type='button' onClick={handleSearch}>
-                        Search
-                    </button>
-                </form>
-                {isLoading 
-                    ?   <div>Loading...</div>
-                    :   <div>
-                            {data?.map(nft => (
-                                <div key={nft.token_address}>
-                                    <h4>{nft.name}</h4>
-                                    {/* <img src={nft.token_uri} /> */}
-                                </div>
-                            ))}
-                        </div>
-                }
+                <Search onSearch={onGetByAddress} />
+                <NFTGallery
+                    isLoading={isLoading}
+                    data={data}
+                />
             </main>
         </>
     )

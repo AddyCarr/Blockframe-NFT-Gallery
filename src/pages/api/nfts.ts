@@ -1,12 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-
 import Moralis from 'moralis'
 
 const MORALIS_API_KEY = process.env.MORALIS_API_KEY
-
-type Data = {
-    name: string
-}
 
 type Query = {
     address: string
