@@ -11,12 +11,14 @@ import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
 
 import { mainnet, goerli } from "@wagmi/chains";
 
+const ALCHEMY_API_KEY = process.env.ALCHEMY_API_KEY
+
 interface Props {
   children: ReactNode;
 }
 
 const { chains, provider, webSocketProvider } = configureChains(ETH_CHAINS, [
-  alchemyProvider({ apiKey: "WNEdnV9HkXoMCB1LvDIyyXbuHMDqsZAw" }),
+  alchemyProvider({ apiKey: ALCHEMY_API_KEY }),
   publicProvider()
 ]);
 
@@ -29,7 +31,7 @@ const client = createClient({
     new CoinbaseWalletConnector({
       chains,
       options: {
-        appName: "Lottery"
+        appName: "Blockframe"
       }
     }),
    

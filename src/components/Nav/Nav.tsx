@@ -4,11 +4,13 @@ import styles from "./Nav.module.css";
 // import other components
 import Button from "../Elements/Button/Button";
 
+
 // import other react pkg to use
 import { HambergerMenu } from "iconsax-react";
 
 // import react package
 import React from "react";
+import { ConnectButton } from "../ConnectButton";
 
 type NavProps = {
   children: React.ReactNode;
@@ -43,7 +45,7 @@ const Nav: React.FC<NavProps> = () => {
         </li>
       </ul>
       <div className={`flex ${styles["navbar-buttons"]}`}>
-        <Button theme="matrix">Connect Wallet</Button>
+        <ConnectButton />
       </div>
       <div className={styles["navbar-responsive-menu"]}>
         <Button theme="transparent">

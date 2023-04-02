@@ -99,7 +99,6 @@ export default function Home() {
                     isLoading={isLoading}
                     data={data}
                 />
-            
             </main>
         </>
     )
