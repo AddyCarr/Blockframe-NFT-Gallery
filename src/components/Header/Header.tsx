@@ -18,6 +18,8 @@ import JsonHeader from "../../Jsons/HeaderBoxes.json";
 
 // import react package
 import React from "react";
+import { Search } from "../Search/Search";
+import { useGetNfts } from "@/hooks/useGetNfts";
 
 // Header component
 type HeaderProps = {
@@ -25,12 +27,19 @@ type HeaderProps = {
 };
 
 const Header: React.FC<HeaderProps> = () => {
+
+  const [
+    isLoading,
+    data,
+    onGetByAddress,
+] = useGetNfts();
+
   return (
     <header className={`${styles.header} flex justify-content-center`}>
       <ContainerCard className="flex flex-column">
         <div className={styles["blur-circle-shape"]}></div>
 
-        <Nav />
+        <Nav children={undefined} />
         <BrickLayout />
 
         <div
@@ -43,8 +52,10 @@ const Header: React.FC<HeaderProps> = () => {
             Flex that new piece. <br />
             Your NFT's to the <span>world</span>.
           </h1>
+          
+          <Search onSearch={onGetByAddress} />
 
-          <div className={`${styles["search-bar"]} flex align-items-center`}>
+          {/* <div className={`${styles["search-bar"]} flex align-items-center`}>
             <SearchNormal1 size="30" color="var(--white-100)" />
             <input
               type="text"
@@ -56,7 +67,7 @@ const Header: React.FC<HeaderProps> = () => {
             >
               <Setting4 size="20" color="var(--dark-900)" />
             </button>
-          </div>
+          </div> */}
 
           <HeaderBoxes titles_numbers={JsonHeader.informations} />
         </div>
