@@ -8,21 +8,25 @@ type Query = {
 }
 
 export default async function nfts(req: NextApiRequest, res: NextApiResponse) {
-    const { address } = req.query as Query;
-
-    if (!Moralis.Core.isStarted) {
-        await Moralis.start({
-            apiKey: MORALIS_API_KEY
+    try {
+        const { address } = req.query as Query;
+    
+        if (!Moralis.Core.isStarted) {
+            await Moralis.start({
+                apiKey: MORALIS_API_KEY
+            });
+        }
+    
+        const response = await Moralis.EvmApi.nft.getWalletNFTs({
+            chain: "0x1",
+            format: "decimal",
+            tokenAddresses: [],
+            mediaItems: false,
+            address,
         });
+
+        res.status(200).json(response.raw)
+    } catch (error) {
+        res.status(404).send({});
     }
-
-    const response = await Moralis.EvmApi.nft.getWalletNFTs({
-        chain: "0x1",
-        format: "decimal",
-        tokenAddresses: [],
-        mediaItems: false,
-        address,
-    });
-
-    res.status(200).json(response.raw)
 }

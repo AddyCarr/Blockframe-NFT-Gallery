@@ -3,7 +3,9 @@ import Head from 'next/head'
 import { useGetNfts } from '@/hooks/useGetNfts'
 import { Search } from '@/components/Search/Search'
 import { NFTGallery } from '@/components/NFTGallery/NFTGallery'
+
 import Header from '@/components/Header/Header';
+
 
 
 export default function Home() {
@@ -21,13 +23,18 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+              
+
             <main>
+
                 <Header />
+
                 <Search onSearch={onGetByAddress} />
                 <NFTGallery
                     isLoading={isLoading}
                     data={data}
                 />
+                </Web3Provider>
             </main>
         </>
     )
