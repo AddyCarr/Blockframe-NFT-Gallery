@@ -1,0 +1,35 @@
+@import "./css-reset.css";
+
+:root {
+  --white-100: #ffffff;
+  --dark-900: #09090a;
+  --dark-600: #808090;
+  --green-400: #c287fc;
+  --green-white-100: #c4b5d4;
+  --orange-highlight: #fdbfad;
+  --orange: #f57770;
+}
+
+body {
+  background: var(--dark-900);
+}
+
+/* my own classes */
+.flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.align-items-center {
+  align-items: center;
+}
+.justify-content-between {
+  justify-content: space-between;
+}

@@ -3,6 +3,8 @@ import Head from 'next/head'
 import { useGetNfts } from '@/hooks/useGetNfts'
 import { Search } from '@/components/Search/Search'
 import { NFTGallery } from '@/components/NFTGallery/NFTGallery'
+import Header from '@/components/Header/Header';
+
 
 export default function Home() {
     const [
@@ -20,6 +22,7 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
+                <Header />
                 <Search onSearch={onGetByAddress} />
                 <NFTGallery
                     isLoading={isLoading}
