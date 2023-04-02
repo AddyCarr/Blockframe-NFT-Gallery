@@ -19,7 +19,7 @@ const Nav: React.FC<NavProps> = () => {
   return (
     <nav className={`${styles.nav} flex align-items-center`}>
       {/* <h1 className={styles["nav-title"]}>Gallery</h1> */}
-      <img src="logoBig.png" alt="Logo" className={styles["nav-title"]} />
+      <img src="logoBig.png" height={44} alt="Logo" className={styles["nav-title"]} />
       <ul className={`flex align-items-center ${styles["navbar-nav"]}`}>
         <li className={`${styles["nav-item"]} ${styles.active}`}>
           <a href="" className={styles["nav-link"]}>
