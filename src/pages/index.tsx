@@ -1,17 +1,12 @@
 import Head from 'next/head'
-import { createGlobalStyle } from 'styled-components';
+
 import { useGetNfts } from '@/hooks/useGetNfts'
 import { Search } from '@/components/Search/Search'
 import { NFTGallery } from '@/components/NFTGallery/NFTGallery'
-import { Web3Provider } from '../../providers/Web3';
-import { Navbar } from '@/components/Navbar';
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    background-color: #111;
-    color: #d1bebe;
-  }
-`;
+import Header from '@/components/Header/Header';
+
+
 
 export default function Home() {
     const [
@@ -28,11 +23,12 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-                  <GlobalStyle />
+              
 
             <main>
-            <Web3Provider>
-            <Navbar />
+
+                <Header />
+
                 <Search onSearch={onGetByAddress} />
                 <NFTGallery
                     isLoading={isLoading}
