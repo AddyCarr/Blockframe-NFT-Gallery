@@ -99,7 +99,7 @@ export default function Home() {
                     isLoading={isLoading}
                     data={data}
                 />
-                </Web3Provider>
+            
             </main>
         </>
     )
