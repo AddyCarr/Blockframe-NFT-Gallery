@@ -18,7 +18,7 @@ interface Props {
 }
 
 const { chains, provider, webSocketProvider } = configureChains(ETH_CHAINS, [
-    alchemyProvider({ apiKey: ALCHEMY_API_KEY }),
+    alchemyProvider({ apiKey: ALCHEMY_API_KEY! }),
     publicProvider(),
 ])
 
