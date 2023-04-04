@@ -1,15 +1,13 @@
-// import styles of this component
-import styles from "./ContainerCard.module.css";
-import React from "react";
+import React from 'react'
+
+import styles from './ContainerCard.module.css'
+
 type ContainerCardProps = {
-  children: React.ReactNode;
-  className: string;
-};
+    children: React.ReactNode
+    className?: string
+}
 
-// ContainerCard component
-const ContainerCard: React.FC<ContainerCardProps> = ({
-  children,
-  className,
-}) => <div className={`${styles.container} ${className}`}>{children}</div>;
-
-export default ContainerCard;
+export const ContainerCard: React.FC<ContainerCardProps> = ({
+    children,
+    className = '',
+}) => <div className={`${styles.container} ${className}`}>{children}</div>

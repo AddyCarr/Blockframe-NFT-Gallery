@@ -16,7 +16,7 @@
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-    transition: .7s;
+    transition: 0.7s;
 }
 .my-masnry-user-box {
     width: 100%;
@@ -24,7 +24,7 @@
     margin-bottom: 20px;
     column-gap: 20px;
     margin-bottom: -80px;
-    transition: .5s;
+    transition: 0.5s;
 }
 .my-masnry-user-prof {
     width: 45px;
@@ -53,4 +53,18 @@
 }
 .my-masonry:hover .my-masnry-user-box {
     margin-bottom: 15px;
+}
+
+.masonry-image {
+    width: 100%;
+}
+
+.masonry-image-error {
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    text-align: center;
 }

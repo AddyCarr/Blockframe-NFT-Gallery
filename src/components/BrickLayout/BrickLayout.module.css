@@ -1,10 +1,10 @@
-.brick-layout { 
+.brick-layout {
     position: absolute;
     width: 60%;
     height: 100%;
     top: 0;
     right: -150px;
-	display: flex;
+    display: flex;
     column-gap: 15px;
     overflow: hidden;
 }
@@ -13,7 +13,7 @@
     position: absolute;
     inset: 0;
     background: var(--dark-900);
-    opacity: .4;
+    opacity: 0.4;
 }
 .brick-column {
     width: 100%;
@@ -56,7 +56,7 @@
         border-radius: 10px;
     }
     .brick-layout::before {
-        opacity: .6;
+        opacity: 0.6;
     }
 }
 @media screen and (max-width: 700px) {

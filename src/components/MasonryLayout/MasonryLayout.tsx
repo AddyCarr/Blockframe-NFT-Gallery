@@ -1,50 +1,56 @@
-// import styles of this component
-import styles from "./MasonryLayout.module.css";
-import React from "react";
+import React from 'react'
+import Masonry from 'react-masonry-css'
+
+import { MasonryBox } from './MasonryBox/MasonryBox'
+import styles from './MasonryLayout.module.css'
+
 type MasonryLayoutProps = {
-  images: {
-    id: number;
-    src: string;
-    user: {
-      src: string;
-      name: string;
-      job: string;
-    };
-  }[];
-};
+    images: {
+        id: string
+        src: string
+        name: string
+        user: {
+            profession: string
+            name: string
+            job: string
+        }
+    }[]
+    isLoading: boolean
+}
 
-// import other react pkg to use
-import Masonry from "react-masonry-css";
+export const MasonryLayout: React.FC<MasonryLayoutProps> = ({
+    images,
+    isLoading,
+}) => {
+    const breakpointColumnsObj = {
+        default: 4,
+        1100: 3,
+        700: 2,
+        500: 1,
+    }
 
-// import other component to use
-import MasonryBox from "./MasonryBox/MasonryBox";
+    if (isLoading) {
+        return <h2 style={{ color: '#fff' }}>Loading NFT's ...</h2>
+    }
 
-// MasonryLayout Component
-const MasonryLayout: React.FC<MasonryLayoutProps> = ({ images }) => {
-  const breakpointColumnsObj = {
-    default: 4,
-    1100: 3,
-    700: 2,
-    500: 1,
-  };
+    if (images.length === 0) {
+        return <h2 style={{ color: '#fff' }}>Nothing to display.</h2>
+    }
 
-  return (
-    <Masonry
-      breakpointCols={breakpointColumnsObj}
-      className={styles["my-masonry-grid"]}
-      columnClassName={styles["my-masonry-grid_column"]}
-    >
-      {images.map((item) => (
-        <MasonryBox
-          key={item.id}
-          wallSrc={5}
-          userProf={item.user.src}
-          userName={item.user.name}
-          userJob={item.user.job}
-        />
-      ))}
-    </Masonry>
-  );
-};
-
-export default MasonryLayout;
+    return (
+        <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className={styles['my-masonry-grid']}
+            columnClassName={styles['my-masonry-grid_column']}
+        >
+            {images.map((item) => (
+                <MasonryBox
+                    key={item.id}
+                    src={item.src}
+                    user={item.user}
+                    name={item.name}
+                />
+            ))}
+        </Masonry>
+    )
+}

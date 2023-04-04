@@ -1,28 +1,25 @@
-import styles from "./BrickLayout.module.css";
-import React from "react";
-type BrickLayoutProps = {};
-// what types to define here as no JS variables exist in this component, only html?
+import React from 'react'
 
-const BrickLayout: React.FC<BrickLayoutProps> = () => {
-  return (
-    <div className={styles["brick-layout"]}>
-      <div className={styles["brick-column"]}>
-        <img src="img/dummy_image/1.jpg" alt="" />
-        <img src="img/dummy_image/2.jpg" alt="" />
-        <img src="img/dummy_image/3.jpg" alt="" />
-      </div>
-      <div className={styles["brick-column"]}>
-        <img src="img/dummy_image/4.jpg" alt="" />
-        <img src="img/dummy_image/5.jpg" alt="" />
-        <img src="img/dummy_image/6.jpg" alt="" />
-      </div>
-      <div className={styles["brick-column"]}>
-        <img src="img/dummy_image/7.jpg" alt="" />
-        <img src="img/dummy_image/8.jpg" alt="" />
-        <img src="img/dummy_image/9.jpg" alt="" />
-      </div>
-    </div>
-  );
-};
+import styles from './BrickLayout.module.css'
 
-export default BrickLayout;
+export const BrickLayout: React.FC<{}> = () => {
+    return (
+        <div className={styles['brick-layout']}>
+            <div className={styles['brick-column']}>
+                <img src='img/dummy_image/1.jpg' alt='' />
+                <img src='img/dummy_image/2.jpg' alt='' />
+                <img src='img/dummy_image/3.jpg' alt='' />
+            </div>
+            <div className={styles['brick-column']}>
+                <img src='img/dummy_image/4.jpg' alt='' />
+                <img src='img/dummy_image/5.jpg' alt='' />
+                <img src='img/dummy_image/6.jpg' alt='' />
+            </div>
+            <div className={styles['brick-column']}>
+                <img src='img/dummy_image/7.jpg' alt='' />
+                <img src='img/dummy_image/8.jpg' alt='' />
+                <img src='img/dummy_image/9.jpg' alt='' />
+            </div>
+        </div>
+    )
+}

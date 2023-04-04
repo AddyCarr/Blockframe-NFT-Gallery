@@ -18,12 +18,12 @@
     overflow: hidden;
     visibility: hidden;
     opacity: 0;
-    transition: .5s;
+    transition: 0.5s;
 }
 .dropdown-item-menu {
     padding: 15px;
     color: var(--white-100);
-    transition: .4s;
+    transition: 0.4s;
     cursor: pointer;
 }
 .dropdown-item-menu.active {
@@ -40,7 +40,7 @@
     opacity: 1;
 }
 .dropdown-arrow-icon {
-    transition: .6s;
+    transition: 0.6s;
 }
 .dropdown:hover .dropdown-arrow-icon {
     transform: rotate(180deg);
