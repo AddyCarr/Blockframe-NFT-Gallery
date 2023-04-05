@@ -8,3 +8,25 @@
 .my-masonry-grid_column {
     padding-left: 30px;
 }
+
+.emptyHeading {
+    color: #fff;
+    text-align: center;
+    font-size: 65px;
+    font-weight: bold;
+    margin: 120px 0;
+}
+
+.loaderWrapper {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.loaderInnerWrapper {
+    width: 200px;
+    height: 200px;
+}
+

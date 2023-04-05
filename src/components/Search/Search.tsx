@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { SearchNormal1, Setting4 } from 'iconsax-react'
 
 import styles from './Search.module.css'
+import { Loader } from '../Loader/Loader'
 
 type SearchProps = {
     onSearch: (value: string) => void
@@ -35,7 +36,7 @@ export const Search: React.FC<SearchProps> = ({
             >
                 {isSearchLoading ? (
                     <div className={styles.loaderWrapper}>
-                        <img className={styles.loaderImg} src='loader.svg' />
+                        <Loader />
                     </div>
                 ) : (
                     <Setting4 size='20' color='var(--dark-900)' />

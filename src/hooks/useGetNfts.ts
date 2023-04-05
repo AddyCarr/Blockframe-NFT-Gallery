@@ -23,9 +23,7 @@ export const useGetNfts = () => {
                 address,
             })
             setIsLoading(false)
-            setTimeout(() => {
-                scrollIntoView('masonry-title')
-            }, 100)
+            scrollIntoView('masonry-title')
         } catch (error) {
             setIsLoading(false)
         }
@@ -39,14 +37,7 @@ type MappedNfts = {
         id: string
         name: string
         src: string
-
-        // TODO - Remove or change into something more relevant for our nft's
-        // This exists purely for fulfilling the masonry box component props
-        user: {
-            profession: string
-            name: string
-            job: string
-        }
+        description: string
     }[]
 }
 
@@ -59,12 +50,7 @@ function mapRawNfts(rawNftsResponse: RawNftsResponse): MappedNfts {
             id: nft.token_id,
             name: nft.name,
             src: parsedMetadata?.image || '',
-            user: {
-                profession:
-                    'https://i.seadn.io/gcs/files/6951021805d1015b6e95937dc084ec80.png?w=500&auto=format',
-                name: 'Users Name',
-                job: 'Users Job',
-            },
+            description: parsedMetadata?.description || ''
         }
     })
 

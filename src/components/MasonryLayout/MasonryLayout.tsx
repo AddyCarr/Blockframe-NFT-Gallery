@@ -1,5 +1,6 @@
 import React from 'react'
 import Masonry from 'react-masonry-css'
+import { Loader } from '../Loader/Loader'
 
 import { MasonryBox } from './MasonryBox/MasonryBox'
 import styles from './MasonryLayout.module.css'
@@ -9,11 +10,7 @@ type MasonryLayoutProps = {
         id: string
         src: string
         name: string
-        user: {
-            profession: string
-            name: string
-            job: string
-        }
+        description: string
     }[]
     isLoading: boolean
 }
@@ -30,11 +27,17 @@ export const MasonryLayout: React.FC<MasonryLayoutProps> = ({
     }
 
     if (isLoading) {
-        return <h2 style={{ color: '#fff' }}>Loading NFT's ...</h2>
+        return (
+            <div className={styles.loaderWrapper}>
+                <div className={styles.loaderInnerWrapper}>
+                    <Loader theme='light' />
+                </div>
+            </div>
+        )
     }
 
     if (images.length === 0) {
-        return <h2 style={{ color: '#fff' }}>Nothing to display.</h2>
+        return <h2 className={styles.emptyHeading}>Nothing to display.</h2>
     }
 
     return (
@@ -47,8 +50,8 @@ export const MasonryLayout: React.FC<MasonryLayoutProps> = ({
                 <MasonryBox
                     key={item.id}
                     src={item.src}
-                    user={item.user}
                     name={item.name}
+                    description={item.description}
                 />
             ))}
         </Masonry>
