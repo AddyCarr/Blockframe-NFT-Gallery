@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { SearchNormal1, Setting4 } from 'iconsax-react'
+import { Ethereum, SearchNormal } from 'iconsax-react'
 
 import styles from './Search.module.css'
 
@@ -18,7 +18,7 @@ export const Search: React.FC<SearchProps> = ({
 
     return (
         <div className={`${styles['search-bar']} flex align-items-center`}>
-            <SearchNormal1 size='30' color='var(--white-100)' />
+            <Ethereum size='30' color='var(--green-400)' />
             <input
                 name='addressInput'
                 onChange={(e) => setInputValue(e.target.value)}
@@ -38,7 +38,11 @@ export const Search: React.FC<SearchProps> = ({
                         <img className={styles.loaderImg} src='loader.svg' />
                     </div>
                 ) : (
-                    <Setting4 size='20' color='var(--dark-900)' />
+                    <SearchNormal
+                        size='20'
+                        color='var(--dark-900)'
+                        variant='Bold'
+                    />
                 )}
             </button>
         </div>
