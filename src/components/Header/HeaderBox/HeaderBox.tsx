@@ -6,12 +6,14 @@ import React from 'react'
 type HeaderBoxProps = {
     number: number
     title: string
+    text: string
     border_right?: boolean
 }
 
 const HeaderBox: React.FC<HeaderBoxProps> = ({
     number,
     title,
+    text,
     border_right = true,
 }) => (
     <div
@@ -19,7 +21,7 @@ const HeaderBox: React.FC<HeaderBoxProps> = ({
             border_right && styles['active-border-right']
         } flex flex-column`}
     >
-        <h1>{`${number}k+`}</h1>
+        <h1>{`${number}${text}+`}</h1>
         <h3>{title}</h3>
     </div>
 )

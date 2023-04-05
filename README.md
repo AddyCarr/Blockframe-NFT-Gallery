@@ -1,6 +1,7 @@
 # Blockframe
 
 View and mint NFT's
+Eaily share your gallery by loading your address!
 
 ## Installation
 

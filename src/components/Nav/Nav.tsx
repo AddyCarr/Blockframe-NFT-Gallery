@@ -22,19 +22,7 @@ export const Nav: React.FC<{}> = () => {
                 </li>
                 <li className={styles['nav-item']}>
                     <a href='' className={styles['nav-link']}>
-                        Mint NFTs
-                    </a>
-                </li>
-                <li className={styles['nav-item']}>
-                    <a href='' className={styles['nav-link']}>
-                        NFT Social Graph
-                    </a>
-                </li>
-                <li
-                    className={`${styles['nav-item']} ${styles['d-none-1100']}`}
-                >
-                    <a href='' className={styles['nav-link']}>
-                        Explore
+                        Mint NFTs (Coming Soon)
                     </a>
                 </li>
             </ul>

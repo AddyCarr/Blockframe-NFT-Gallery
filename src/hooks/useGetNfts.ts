@@ -46,11 +46,20 @@ function mapRawNfts(rawNftsResponse: RawNftsResponse): MappedNfts {
         const parsedMetadata = nft?.metadata
             ? (JSON.parse(nft.metadata) as Metadata)
             : null
+
+        // Replacing ipfs:// with https://ipfs.io/ipfs/ to be able to fetch the image
+        let img = parsedMetadata?.image || ''
+        if (img.includes('ipfs://')) {
+            img = img
+                .replace('ipfs://', 'https://ipfs.io/ipfs/')
+                .replace('ipfs/ipfs', 'ipfs/')
+        }
+
         return {
             id: nft.token_id,
             name: nft.name,
-            src: parsedMetadata?.image || '',
-            description: parsedMetadata?.description || ''
+            src: img,
+            description: parsedMetadata?.description || '',
         }
     })
 

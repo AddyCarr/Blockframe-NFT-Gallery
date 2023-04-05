@@ -31,8 +31,10 @@ export const Header: React.FC<HeaderProps> = ({
                     <h2 className={styles['heading-header-title']}>
                         Generate your shareable NFT Gallery
                     </h2>
-                    <h1 className={styles['heading-header-second-title']}>
+                    <h1 className={styles['heading-header-third-title']}>
                         Blockframe. <br />
+                    </h1>
+                    <h1 className={styles['heading-header-second-title']}>
                         Your NFT's to the <span>world</span>.
                     </h1>
 

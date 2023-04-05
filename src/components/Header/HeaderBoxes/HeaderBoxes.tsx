@@ -7,6 +7,7 @@ type HeaderBoxesProps = {
     titles_numbers: {
         id: number
         title: string
+        text: string
         number: number
     }[]
 }
@@ -17,6 +18,7 @@ export const HeaderBoxes: React.FC<HeaderBoxesProps> = ({ titles_numbers }) => (
             <HeaderBox
                 key={title_number.id}
                 title={title_number.title}
+                text={title_number.text}
                 number={title_number.number}
                 border_right={idx === titles_numbers.length - 1 ? false : true}
             />
