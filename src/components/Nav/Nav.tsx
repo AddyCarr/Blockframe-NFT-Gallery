@@ -8,7 +8,6 @@ import styles from './Nav.module.css'
 export const Nav: React.FC<{}> = () => {
     return (
         <nav className={`${styles.nav} flex align-items-center`}>
-            <h1 className={styles['nav-title']}>Gallery</h1>
             <img
                 src='logoBig.png'
                 height={44}

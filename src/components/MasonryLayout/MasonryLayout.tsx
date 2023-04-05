@@ -1,7 +1,7 @@
 import React from 'react'
 import Masonry from 'react-masonry-css'
-import { Loader } from '../Loader/Loader'
 
+import { Loader } from '../Loader/Loader'
 import { MasonryBox } from './MasonryBox/MasonryBox'
 import styles from './MasonryLayout.module.css'
 
