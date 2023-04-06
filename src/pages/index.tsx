@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Head from 'next/head'
 
 import { useGetNfts } from '@/hooks/useGetNfts'
@@ -6,12 +7,22 @@ import { MasonryLayout } from '@/components/MasonryLayout/MasonryLayout'
 import { useDropdown } from '../hooks/useDropdown'
 import { ContainerCard } from '@/components/ContainerCard/ContainerCard'
 import { Dropdown } from '@/components/Elements/Dropdown/Dropdown'
-import Button from '@/components/Elements/Button/Button'
 import styles from '../styles/App.module.css'
+import { GetServerSideProps } from 'next'
 
-export default function Home() {
+type HomeProps = {
+    address: string
+}
+
+export default function Home(props: HomeProps) {
     const [isLoading, data, onGetByAddress] = useGetNfts()
     const [dropdownItems, selectedItem, onUpdateSelection] = useDropdown()
+
+    useEffect(() => {
+        if (props.address) {
+            onGetByAddress(props.address)
+        }
+    }, [])
 
     return (
         <>
@@ -56,4 +67,13 @@ export default function Home() {
             </main>
         </>
     )
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    const { address } = context.query
+    return {
+        props: {
+            address
+        },
+    }
 }
