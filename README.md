@@ -1,7 +1,7 @@
 ## 📦 Blockframe
 
-View and mint NFT's Easily.
-Share your gallery by loading your address! 🎨
+View and mint NFT's Easily.  
+Share your gallery by loading your address! 🎨  
 See a live version of the site here: https://blockframe.vercel.app/
 
 ### 🔧 Installation
