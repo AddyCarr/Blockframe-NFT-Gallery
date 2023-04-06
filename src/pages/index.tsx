@@ -9,6 +9,7 @@ import { useDropdown } from '../hooks/useDropdown'
 import { ContainerCard } from '@/components/ContainerCard/ContainerCard'
 import { Dropdown } from '@/components/Elements/Dropdown/Dropdown'
 import styles from '../styles/App.module.css'
+import Button from '@/components/Elements/Button/Button'
 
 type HomeProps = {
     address: string
