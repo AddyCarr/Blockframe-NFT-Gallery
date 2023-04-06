@@ -8,7 +8,9 @@ export const ConnectButton = () => {
             {({ isConnected, show, truncatedAddress, ensName }) => {
                 return (
                     <button className={styles.button} onClick={show}>
-                        {isConnected ? ensName ?? truncatedAddress : 'Connect'}
+                        {isConnected
+                            ? ensName ?? truncatedAddress
+                            : 'Connect Wallet'}
                     </button>
                 )
             }}

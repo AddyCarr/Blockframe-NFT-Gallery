@@ -1,5 +1,6 @@
 import React from 'react'
 import { HambergerMenu } from 'iconsax-react'
+import Link from 'next/link'
 
 import Button from '../Elements/Button/Button'
 import { ConnectButton } from '../ConnectButton/ConnectButton'
@@ -16,14 +17,14 @@ export const Nav: React.FC<{}> = () => {
             />
             <ul className={`flex align-items-center ${styles['navbar-nav']}`}>
                 <li className={`${styles['nav-item']} ${styles.active}`}>
-                    <a href='' className={styles['nav-link']}>
+                    <Link href='/' className={styles['nav-link']}>
                         Home
-                    </a>
+                    </Link>
                 </li>
                 <li className={styles['nav-item']}>
-                    <a href='' className={styles['nav-link']}>
+                    <Link href='/mint' className={styles['nav-link']}>
                         Mint NFTs (Coming Soon)
-                    </a>
+                    </Link>
                 </li>
             </ul>
             <div className={`flex ${styles['navbar-buttons']}`}>

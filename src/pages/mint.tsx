@@ -1,6 +1,4 @@
-import { useEffect } from 'react'
 import Head from 'next/head'
-import { GetServerSideProps } from 'next'
 
 import { useGetNfts } from '@/hooks/useGetNfts'
 import { Header } from '@/components/Header/Header'
@@ -10,19 +8,9 @@ import { ContainerCard } from '@/components/ContainerCard/ContainerCard'
 import { Dropdown } from '@/components/Elements/Dropdown/Dropdown'
 import styles from '../styles/App.module.css'
 
-type HomeProps = {
-    address: string
-}
-
-export default function Home(props: HomeProps) {
+export default function Home() {
     const [isLoading, data, onGetByAddress] = useGetNfts()
     const [dropdownItems, selectedItem, onUpdateSelection] = useDropdown()
-
-    useEffect(() => {
-        if (props.address) {
-            onGetByAddress(props.address)
-        }
-    }, [])
 
     return (
         <>
@@ -45,6 +33,7 @@ export default function Home(props: HomeProps) {
                     className='flex justify-content-center'
                     style={{ marginTop: '50px', padding: '50px' }}
                 >
+                    <h1>MINT</h1>
                     <ContainerCard>
                         <div
                             className={`${styles['gallery-setting']} flex justify-content-between align-items-center`}
@@ -60,7 +49,6 @@ export default function Home(props: HomeProps) {
                             <MasonryLayout
                                 isLoading={isLoading}
                                 images={data.result}
-                                filterBy={selectedItem.id}
                             />
                         )}
                     </ContainerCard>
@@ -68,13 +56,4 @@ export default function Home(props: HomeProps) {
             </main>
         </>
     )
-}
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-    const { address } = context.query
-    return {
-        props: {
-            address: address || '',
-        },
-    }
 }
