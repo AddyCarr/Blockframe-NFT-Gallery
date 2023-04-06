@@ -14,14 +14,14 @@ export const MasonryBoxImage: React.FC<MasonryBoxImageProps> = ({
     const [hasError, setHasError] = useState(false)
 
     function getRandomHexColor() {
-        const hexChars = '0123456789ABCDEF';
+        const hexChars = '0123456789ABCDEF'
 
-        let hexColor = '#';
+        let hexColor = '#'
         for (let i = 0; i < 6; i++) {
-          hexColor += hexChars[Math.floor(Math.random() * 16)];
+            hexColor += hexChars[Math.floor(Math.random() * 16)]
         }
-        
-        return hexColor;
+
+        return hexColor
     }
 
     if (src && !hasError) {
@@ -36,7 +36,10 @@ export const MasonryBoxImage: React.FC<MasonryBoxImageProps> = ({
     }
 
     return (
-        <div className={styles['masonry-image-error']} style={{ backgroundColor: getRandomHexColor() }}>
+        <div
+            className={styles['masonry-image-error']}
+            style={{ backgroundColor: getRandomHexColor() }}
+        >
             <h2>{name}</h2>
         </div>
     )

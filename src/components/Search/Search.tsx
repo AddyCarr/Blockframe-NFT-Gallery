@@ -23,8 +23,8 @@ export const Search: React.FC<SearchProps> = ({
     function handleOnSearch() {
         router.push({
             pathname: '/',
-            query: { address: inputValue }
-        });
+            query: { address: inputValue },
+        })
         onSearch(inputValue)
     }
 

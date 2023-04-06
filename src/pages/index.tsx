@@ -73,7 +73,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     const { address } = context.query
     return {
         props: {
-            address
+            address,
         },
     }
 }
