@@ -40,6 +40,7 @@ type MappedNfts = {
         name: string
         src: string
         description: string
+        blockNumberMinted: string
     }[]
 }
 
@@ -62,6 +63,7 @@ function mapRawNfts(rawNftsResponse: RawNftsResponse): MappedNfts {
             name: nft.name,
             src: img,
             description: parsedMetadata?.description || '',
+            blockNumberMinted: nft.block_number_minted,
         }
     })
 

@@ -2,8 +2,8 @@ import React from 'react'
 import { ArrowUp3 } from 'iconsax-react'
 
 import Button from '../Button/Button'
-import styles from './Dropdown.module.css'
 import { DropdownItem, DropdownItems } from '@/hooks/useDropdown'
+import styles from './Dropdown.module.css'
 
 type DropdownProps = {
     selectedItem: DropdownItem

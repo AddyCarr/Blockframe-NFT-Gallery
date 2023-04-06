@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import Head from 'next/head'
+import { GetServerSideProps } from 'next'
 
 import { useGetNfts } from '@/hooks/useGetNfts'
 import { Header } from '@/components/Header/Header'
@@ -8,7 +9,6 @@ import { useDropdown } from '../hooks/useDropdown'
 import { ContainerCard } from '@/components/ContainerCard/ContainerCard'
 import { Dropdown } from '@/components/Elements/Dropdown/Dropdown'
 import styles from '../styles/App.module.css'
-import { GetServerSideProps } from 'next'
 
 type HomeProps = {
     address: string
@@ -60,6 +60,7 @@ export default function Home(props: HomeProps) {
                             <MasonryLayout
                                 isLoading={isLoading}
                                 images={data.result}
+                                filterBy={selectedItem.id}
                             />
                         )}
                     </ContainerCard>
