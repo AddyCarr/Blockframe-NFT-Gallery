@@ -5,7 +5,5 @@ type LoaderProps = {
 }
 
 export const Loader: React.FC<LoaderProps> = ({ theme = 'dark' }) => {
-    return (
-        <img className={styles.loaderImg} src={`loader-${theme}.svg`} />
-    )
+    return <img className={styles.loaderImg} src={`loader-${theme}.svg`} />
 }

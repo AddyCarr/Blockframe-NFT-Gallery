@@ -12,9 +12,8 @@ export type MasonryBoxProps = {
 export const MasonryBox: React.FC<MasonryBoxProps> = ({
     src,
     name,
-    description
+    description,
 }) => {
-
     return (
         <div className={styles['my-masonry']}>
             <MasonryBoxImage src={src} name={name} />
