@@ -1,12 +1,20 @@
 import React from 'react'
-import { HambergerMenu } from 'iconsax-react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { HambergerMenu } from 'iconsax-react'
 
 import Button from '../Elements/Button/Button'
 import { ConnectButton } from '../ConnectButton/ConnectButton'
 import styles from './Nav.module.css'
 
+const navConfig = [
+    { id: 'home', label: 'Home', href: '/' },
+    { id: 'mint', label: 'Mint NFTs (Coming Soon)', href: '/mint' },
+]
+
 export const Nav: React.FC<{}> = () => {
+    const router = useRouter()
+
     return (
         <nav className={`${styles.nav} flex align-items-center`}>
             <img
@@ -16,16 +24,13 @@ export const Nav: React.FC<{}> = () => {
                 className={styles['nav-title']}
             />
             <ul className={`flex align-items-center ${styles['navbar-nav']}`}>
-                <li className={`${styles['nav-item']} ${styles.active}`}>
-                    <Link href='/' className={styles['nav-link']}>
-                        Home
-                    </Link>
-                </li>
-                <li className={styles['nav-item']}>
-                    <Link href='/mint' className={styles['nav-link']}>
-                        Mint NFTs (Coming Soon)
-                    </Link>
-                </li>
+                {navConfig.map(navItem => (
+                    <li key={navItem.id} className={`${styles['nav-item']} ${navItem.href === router.route ? styles.active : ''}`}>
+                        <Link href={navItem.href} className={styles['nav-link']}>
+                            {navItem.label}
+                        </Link>
+                    </li>
+                ))}
             </ul>
             <div className={`flex ${styles['navbar-buttons']}`}>
                 <ConnectButton />

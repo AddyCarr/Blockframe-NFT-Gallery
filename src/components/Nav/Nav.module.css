@@ -1,6 +1,7 @@
 .nav {
     padding: 40px 40px 0 40px;
-    z-index: 2;
+    position: absolute;
+    width: 100%;
 }
 .nav-title {
     font-size: 1.8rem;
@@ -8,7 +9,7 @@
 }
 .navbar-nav {
     margin-left: 140px;
-    column-gap: 25px;
+    column-gap: 45px;
 }
 .nav-item {
     color: var(--dark-600);
