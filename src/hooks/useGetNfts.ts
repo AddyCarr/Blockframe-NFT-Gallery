@@ -23,7 +23,9 @@ export const useGetNfts = () => {
                 address,
             })
             setIsLoading(false)
-            scrollIntoView('masonry-title')
+            setTimeout(() => {
+                scrollIntoView('masonry-title')
+            }, 100)
         } catch (error) {
             setIsLoading(false)
         }
