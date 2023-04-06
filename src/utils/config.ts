@@ -7,4 +7,4 @@ import {
     arbitrum,
 } from '@wagmi/chains'
 
-export const ETH_CHAINS = [mainnet, goerli]
+export const ETH_CHAINS = [mainnet, goerli] //add chains here
