@@ -45,6 +45,4 @@ npx prettier --write .
         - Finish and deploy basic sol minting contract incl. calls for: name, description and URI.
         - Create basic frontend mint page with fields for above info
         - Integrate front/back end using ethers
-    - Style the share-link button
-    - add functionality to pull address to search upon connecting wallet
-    - Click to display lightbox on each NFT MasonaryBox component, showing larger version and all metadata
+    - Style the share-link bgit 
