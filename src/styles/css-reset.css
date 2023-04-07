@@ -129,3 +129,7 @@ table {
 a {
     text-decoration: none;
 }
+
+body::-webkit-scrollbar{
+    display: none;
+}

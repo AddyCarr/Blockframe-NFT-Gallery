@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { ContainerCard } from '../ContainerCard/ContainerCard'
-import { Nav } from '../Nav/Nav'
 import { BrickLayout } from '../BrickLayout/BrickLayout'
 import { HeaderBoxes } from './HeaderBoxes/HeaderBoxes'
 import { Search } from '../Search/Search'
@@ -22,7 +21,6 @@ export const Header: React.FC<HeaderProps> = ({
             <ContainerCard className='flex flex-column'>
                 <div className={styles['blur-circle-shape']}></div>
 
-                <Nav />
                 <BrickLayout />
 
                 <div
